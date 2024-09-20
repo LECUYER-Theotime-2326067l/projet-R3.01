@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../_assets/includes/exceptions/autoloader.php';
+require __DIR__ . '/../_assets/includes/autoloader.php';
 require __DIR__ . '/../modules/blog/controllers/homepage.php';
 
 try {
