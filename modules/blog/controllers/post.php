@@ -1,11 +1,11 @@
 <?php
 
-require_once('modules/blog/views/homepage');
+require_once __DIR__ . '/../views/homepage.php';
 
 function post(string $identifier)
 {
 	$post = getPost($identifier);
 	$comments = getComments($identifier);
 
-	require('modules/blog/views/post.php');
+	require_once __DIR__ . '/../views/homepage.php'; 
 }

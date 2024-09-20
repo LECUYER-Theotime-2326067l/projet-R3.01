@@ -1,25 +1,25 @@
 <?php
 
-require '_assets/imcludes/exceptions/constants.php';
+require __DIR__ . '/constants.php';
 
 final class autoloader //fonction pour les chargements
 {
     public static function loadClassCore ($S_nameClasse) // fonction pour charger  le noyaux, le S_ est pour dire qu'elle est static
     {
-        $S_file = constants::directoryCore() . "$S_nameClasse.php";   // Construit le chemin complet vers la classe du noyau à partir du nom de classe
+        $S_file = constants::directoryCore() . "/$S_nameClasse.php";   // Construit le chemin complet vers la classe du noyau à partir du nom de classe
         return static::_load($S_file); // Appelle la méthode privée _load pour inclure le fichier
     }
 
     public static function loadClassesException ($S_nameClasse) // Méthode pour charger les classes
     {
-        $S_file = constants::directoryExceptions() . "$S_nameClasse.php"; // Construit le chemin complet vers la classe d'exception à partir du nom de classe
+        $S_file = constants::directoryExceptions() . "/$S_nameClasse.php"; // Construit le chemin complet vers la classe d'exception à partir du nom de classe
 
         return static::_load($S_file);
     }
 
     public static function loadClassesModels ($S_nameClasse)
     {
-        $S_file = constants::directoryModel() . "$S_nameClasse.php"; // Construit le chemin complet vers la classe model à partir du nom de classe
+        $S_file = constants::directoryModel() . "/$S_nameClasse.php"; // Construit le chemin complet vers la classe model à partir du nom de classe
 
         return static::_load($S_file);
     }
@@ -27,14 +27,14 @@ final class autoloader //fonction pour les chargements
 
     public static function loadClassesViews ($S_nameClasse)
     {
-        $S_file = constants::directoryViews() . "$S_nameClasse.php";// Construit le chemin complet vers la classe views à partir du nom de classe
+        $S_file = constants::directoryViews() . "/$S_nameClasse.php";// Construit le chemin complet vers la classe views à partir du nom de classe
 
         return static::_load($S_file);
     }
 
-    public static function loadClassesControllers ($S_nameClasse)
+    public static function loadClassesControllers($S_nameClasse)
     {
-        $S_file = constants::directoryControl() . "$S_nameClasse.php"; // Construit le chemin complet vers la classe controlleurs à partir du nom de classe
+        $S_file = constants::directoryControl() . "/$S_nameClasse.php"; // Construit le chemin complet vers la classe controlleurs à partir du nom de classe
 
         return static::_load($S_file);
     }
