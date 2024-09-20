@@ -16,10 +16,21 @@
             $this->conn = $db;
         }
 
+        //creer la table user
+        public function createTableUser(){
+            $query = "CREATE TABLE USER (userID NUMBER PRIMARY KEY, 
+                                         userName VARCHAR2(20),
+                                         userEmail VARCHAR2(40),
+                                         userPassword VARCHAR2(40),
+                                         userGender VARCHAR2(10),
+                                         userGrade VARCHAR2(20)
+                                         );";
+        }
+
         //Fonction pour creer un nouvel utilisateur
         public function createNewUser(){
-            $query = "INSERT INTO " . $this->table . "(userName, userEmail, userPassword, userGender, userGrade) 
-            VALUES(:userName, :userEmail, :userPassword,:userGender, :userGrade)";
+            $query = "INSERT INTO " . $this->table . "(userId, userName, userEmail, userPassword, userGender, userGrade) 
+            VALUES(userSeq.NEXTVAL, :userName, :userEmail, :userPassword,:userGender, :userGrade)";
 
             $stmt = $this->conn->prepare($query);
 
@@ -129,4 +140,4 @@
             return false;
         }
     }
-php?>
+?>
