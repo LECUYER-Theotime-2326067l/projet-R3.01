@@ -1,16 +1,15 @@
 body{
     text-align: center;
-        align-content: center;
-        background-color: red;
-    }
-    .connect{
-        position: sticky;
-        text-align: center;
-        font-family: Arial;
-    
-    }
-    .mdp{
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    
+    align-content: center;
+    background-color: red;
+}
+.connect{
+    position: sticky;
+    text-align: center;
+    font-family: Arial;
+
+}
+.mdp{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
