@@ -1,7 +1,7 @@
 <!DOCTYPE HTMl>
 <html lang="fr">
 <title>Repas</title>
-<link rel="stylesheet" href="Repas.css">
+<link rel="stylesheet" href="css/Repas.css">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

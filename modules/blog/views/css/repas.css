@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    align-content: center;
+    background-color: red;
+    flex-wrap: wrap;
+}
+
+header{
+    display: flex;
+    border: solid;
+    background-color: azure;
+    box-shadow: 1px 1px 20px black;
+    width: 100vw;
+    color: white;
+    margin-bottom: 50px;
+}
+.box{
+    background-color: darksalmon;
+    border: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
