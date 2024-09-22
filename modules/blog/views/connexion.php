@@ -1,8 +1,9 @@
-<!DOCTYPE HTMl>
-<html lang="fr">
-<title>Connexion</title>
-<link rel="stylesheet" href="css/connexion.css">
-<?php include 'header.php'?>
+<?php
+
+$css_file = "homepage.css";
+include __DIR__ . '/header.php';
+headerPage("Acceuil", $css_file);
+?>
 <body>
 <form method="post" action="connexion.php" id="connect" class="connect">
     <div class="mail">
