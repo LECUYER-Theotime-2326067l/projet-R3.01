@@ -1,8 +1,8 @@
 <?php
-    class User{
+    class user{
         //Prorpiétés
         private $conn;
-        private $table = 'user'; // Nom de la table
+        private $table = 'USER'; // Nom de la table
         
         public $userID;
         public $userName;
@@ -18,19 +18,19 @@
 
         //creer la table user
         public function createTableUser(){
-            $query = "CREATE TABLE USER (userID NUMBER PRIMARY KEY, 
-                                         userName VARCHAR2(20),
-                                         userEmail VARCHAR2(40),
-                                         userPassword VARCHAR2(40),
-                                         userGender VARCHAR2(10),
-                                         userGrade VARCHAR2(20)
-                                         );";
+            $query = "CREATE TABLE IS NOT EXISTS USER (userID NUMBER(8) PRIMARY KEY, 
+													   userName VARCHAR2(20),
+													   userEmail VARCHAR2(40),
+													   userPassword VARCHAR2(40),
+												   	   userGender VARCHAR2(10),
+											       	   userGrade VARCHAR2(20)
+														 );";
         }
 
         //Fonction pour creer un nouvel utilisateur
         public function createNewUser(){
-            $query = "INSERT INTO " . $this->table . "(userId, userName, userEmail, userPassword, userGender, userGrade) 
-            VALUES(userSeq.NEXTVAL, :userName, :userEmail, :userPassword,:userGender, :userGrade)";
+            $query = "INSERT INTO " . $this->table . "(userID, userName, userEmail, userPassword, userGender, userGrade) 
+            VALUES(userID, :userName, :userEmail, :userPassword,:userGender, :userGrade)";
 
             $stmt = $this->conn->prepare($query);
 
@@ -88,11 +88,11 @@
         }
 
         public function updateUser(){
-            $query = "UPDATE " . $thiss->table . "
+            $query = "UPDATE " . $this->table . "
                       SET userName = :userName,
-                          userEmail = :userEmail
-                          userPassword = :userPassword
-                          userGender = :userGender
+                          userEmail = :userEmail,
+                          userPassword = :userPassword,
+                          userGender = :userGender,
                           userGrade = :userGrade
                       WHERE userID = :userID";
             
@@ -123,7 +123,7 @@
 
         // suprimer un utilisateur
         public function deleteUser(){
-            $query = "DELETE FROM " . $this->table . "WHERE userID = :userID";
+            $query = "DELETE FROM " . $this->table . " WHERE userID = :userID";
 
             $stmt = $this->conn->prepare($query);
 
@@ -134,7 +134,7 @@
             $stmt->bindParam(':userID', $this->userID);
 
             // lancer la requête
-            if($stmt->execute){
+            if($stmt->execute()){
                 return true;
             }
             return false;
