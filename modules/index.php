@@ -6,7 +6,7 @@ try {
     if (filter_input(INPUT_GET, 'action')) {
         if ($_GET['action'] === 'post') {
             if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-                (new \modules\blog\controllers\post())->execute($_GET['id']);
+                (new \modules\blog\controllers\homepage())->execute();
             }
             throw new ControllerException('Aucun identifiant de billet envoyé');
         }
