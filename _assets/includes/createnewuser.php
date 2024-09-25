@@ -55,4 +55,36 @@
      } else {
          echo "la table user n'a pas pu être suprimer";
      }*/
+
+     	//affichage des user
+	echo "Liste des utilisateurs";
+	$stmt = $user->read();
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+		extract($row);
+		echo "<p>";
+		echo "ID: {$userID} <br>";
+		echo "Nom: {$userName} <br>";
+		echo "Email: {$userEmail} <br>";
+		echo "Mot de passe: {$userPassword} <br>";
+		echo "Genre: {$userGender} <br>";
+		echo "Grade: {$userGrade} <br>";
+		echo "</p>";
+	}
+
+    // afficher utilisateur via l'id
+	$userData = $user->readOneById();
+
+	if ($userData) {
+		echo "Détails de l'utilisateur";
+		echo "<p>";
+		echo "ID: {$userData['userID']} <br>";
+		echo "Nom: {$userData['userName']} <br>";
+		echo "Email: {$userData['userEmail']} <br>";
+		echo "Mot de passe: {$userData['userPassword']} <br>";
+		echo "Genre: {$userData['userGender']} <br>";
+		echo "Grade: {$userData['userGrade']} <br>";
+		echo "</p>";
+	} else {
+		echo "Aucun utilisateur trouvé avec cet ID.";
+	}
 ?>

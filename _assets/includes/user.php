@@ -103,7 +103,7 @@ class user{
     // fonction pour lire un utilisateur par ID
     public function readOneById(){
         $query = "SELECT userID, userName, userEmail, userPassword, userGender, userGrade
-                  FROM " . $this->table . "WHERE userID = ? LIMIT 0,1";
+                  FROM " . $this->table . " WHERE userID = ? LIMIT 0,1";
         
         $stmt = $this->conn>prepare($query);
         $stmt->bindParam(1, $this->userID);
@@ -112,13 +112,9 @@ class user{
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if($row){
-            //assigner les valeurs au propriété
-            $this->userName = $row['userName'];
-            $this->userEmail = $row['userEmail'];
-            $this->userPassword = $row['userPassword'];
-            $this->userGender = $row['userGender'];
-            $this->userGrade = $row['userGrade'];
+            return $row;
         }
+        return null;
     }
 
     public function updateUser(){
