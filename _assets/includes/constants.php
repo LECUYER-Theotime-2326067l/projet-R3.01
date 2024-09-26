@@ -1,18 +1,17 @@
 <?php
-
 final class Constants
 {
     // Chemins relatifs
     const DIR_VIEWS        = '/modules/blog/views/';
     const DIR_MODELS       = '/modules/blog/models/';
     const DIR_CONTROLLERS  = '/modules/blog/controllers/';
-    const DIR_ASSETS       = '/_assets/';
     const DIR_INCLUDES     = '/_assets/includes/';
-    const DIR_EXCEPTIONS   = '/_assets/includes/exceptions';
+    const DIR_EXCEPTIONS   = '/_assets/includes/exceptions/';
 
     // Méthodes pour obtenir les chemins complets
     public static function directoryRoot() {
-        return realpath(__DIR__ . '/../../../'); // Chemin vers le répertoire racine
+    return realpath(__DIR__ . '../../../'); // Chemin vers le répertoire racine
+      
     }
 
     public static function directoryCore(){
@@ -29,10 +28,6 @@ final class Constants
 
     public static function directoryControllers() {
         return self::directoryRoot() . self::DIR_CONTROLLERS;
-    }
-
-    public static function directoryAssets() {
-        return self::directoryRoot() . self::DIR_ASSETS;
     }
 
     public static function directoryExceptions(){

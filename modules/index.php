@@ -5,7 +5,7 @@ try {
     if (filter_input(INPUT_GET, 'action')) {
         if ($_GET['action'] === 'homepage') {
             if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-                (new \modules\blog\controllers\homepage())->execute($_GET['id']);
+                (new homepage())->execute($_GET['id']);
             }
             throw new ControllerException('Aucun identifiant de billet envoyé');
         }
@@ -22,7 +22,7 @@ try {
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
-    (new \modules\blog\controllers\homepage())->execute();
+    (new homepageController())->execute();
 } catch (ControllerException $e) {
     (new \modules\blog\views\error($e->getMessage()))->show();
 }

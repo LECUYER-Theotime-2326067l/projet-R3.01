@@ -1,7 +1,7 @@
 <?php
- namespace modules\blog\controllers;
 
- class homepage {
+ class homepageController {
+   
     public function execute() {
         $fichierPhp = constants::directoryViews() . 'homepage.php';
 
