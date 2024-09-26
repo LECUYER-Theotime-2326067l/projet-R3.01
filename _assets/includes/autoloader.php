@@ -2,6 +2,7 @@
 
 require __DIR__ . '/constants.php';
 
+
 final class autoloader //fonction pour les chargements
 {
     public static function loadClassCore ($S_nameClasse) // fonction pour charger  le noyaux, le S_ est pour dire qu'elle est static

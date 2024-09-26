@@ -3,8 +3,7 @@
 
  class homepage {
     public function execute() {
-        $fichierPhp = __DIR__ . '/../views/homepage.php';
-
+        $fichierPhp = constants::directoryViews() . 'homepage.php';
 
         if (file_exists($fichierPhp)) {
             require_once $fichierPhp;
