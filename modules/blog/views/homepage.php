@@ -21,7 +21,7 @@ headerPage("Accueil", $css_file);
     </h3>
     <div class="tenDiv">
         <p class="tenText">
-            <img src="css/tendersRacIMG.jpg" class="tenIMG">
+            <img src="blog/views/css/tendersRacIMG.jpg" class="tenIMG">
             Ah, mais avez-vous déjà réellement vécu une expérience culinaire avant de goûter aux tenders à la raclette ?
             Permettez-moi d’en douter. Car ces tenders, c’est tout simplement l’apothéose du plaisir gastronomique !
             Imaginez un instant : des morceaux de poulet d'une tendreté exquise, enrobés d'une panure dorée et croustillante,

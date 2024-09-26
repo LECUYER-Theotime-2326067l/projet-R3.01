@@ -5,6 +5,7 @@
     public function execute() {
         $fichierPhp = __DIR__ . '/../views/homepage.php';
 
+
         if (file_exists($fichierPhp)) {
             require_once $fichierPhp;
         } else {

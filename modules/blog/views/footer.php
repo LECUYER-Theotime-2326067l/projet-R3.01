@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="blog/views/css/footer.css">
 <footer>
     <div class="footerhaut">
         <a href="ordre.php" class="btn">Structure</a>
