@@ -1,10 +1,9 @@
 <?php
 
-$css_file = "Repas.css";
+$css_file = "repas.css";
 include __DIR__ . '/header.php';
 headerPage("Repas", $css_file);
 ?>
-<body>
 <h1>
     Repas
 </h1>
@@ -19,5 +18,5 @@ headerPage("Repas", $css_file);
     <div class="box">
         list3
     </div>
-</body>
+
 <?php include 'footer.php'?>
