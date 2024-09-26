@@ -2,11 +2,16 @@ body{
     text-align: center;
     align-content: center;
     background-color: red;
+    height: 100%;
 }
 .connect{
+    display: flex;
+    flex-direction: column;
     position: sticky;
     text-align: center;
     font-family: Arial;
+    min-height: 100vh;
+    flex: 1;
 
 }
 .mdp{

@@ -8,4 +8,4 @@ headerPage("Acceuil", $css_file);
 <body>
 
 </body>
-</html>
+<?php include 'footer.php'?>

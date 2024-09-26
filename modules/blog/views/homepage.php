@@ -2,7 +2,7 @@
 
 $css_file = "homepage.css";
 include __DIR__ . '/header.php';
-headerPage("Acceuil", $css_file);
+headerPage("Accueil", $css_file);
 ?>
 <h1>
     Les Tenracs

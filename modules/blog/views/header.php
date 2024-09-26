@@ -14,9 +14,9 @@ function headerPage($page_title = "Titre par DÃ©faut", $css_file = "Titre par dÃ
 </head>
 <body>
 <header>
-    <a href="" class="btn">acceuil</a>
-    <a href="" class="btn">repas</a>
-    <a href="" class="btn">structure</a>
+    <a href="homepage.php" class="btn">acceuil</a>
+    <a href="Repas.php" class="btn">repas</a>
+    <a href="ordre.php" class="btn">structure</a>
     <a href="" class="btn">plat</a>
     <button class="btn">
         +

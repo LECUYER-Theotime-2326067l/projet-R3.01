@@ -20,5 +20,4 @@ headerPage("Acceuil", $css_file);
         list3
     </div>
 </body>
-</html>
-<?php
+<?php include 'footer.php'?>

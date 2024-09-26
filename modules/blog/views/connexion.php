@@ -21,4 +21,4 @@ headerPage("Acceuil", $css_file);
 <input type="submit" class="but" value="Connexion">
 </form>
 </body>
-</html>
+<?php include 'footer.php'?>
