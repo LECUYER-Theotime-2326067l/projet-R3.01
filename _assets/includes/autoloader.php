@@ -4,6 +4,12 @@ require __DIR__ . '/constants.php';
 
 final class autoloader //fonction pour les chargements
 {
+    public static function loadClassCore ($S_nameClasse) // fonction pour charger  le noyaux, le S_ est pour dire qu'elle est static
+    {
+        $S_file = constants::directoryCore() . "$S_nameClasse.php";   // Construit le chemin complet vers la classe du noyau à partir du nom de classe
+        return static::_load($S_file); // Appelle la méthode privée _load pour inclure le fichier
+    }
+
     public static function loadClassesException ($S_nameClasse) // Méthode pour charger les classes
     {
         $S_file = constants::directoryExceptions() . "$S_nameClasse.php"; // Construit le chemin complet vers la classe d'exception à partir du nom de classe
@@ -27,7 +33,7 @@ final class autoloader //fonction pour les chargements
     }
     public static function loadClassesControllers ($S_nameClasse)
     {
-        $S_file = constants::directoryControllers() . "$S_nameClasse.php"; // Construit le chemin complet vers la classe controlleurs à partir du nom de classe
+        $S_file = constants::directoryControllers() . "$S_nameClasse.php";
 
         return static::_load($S_file);
     }
