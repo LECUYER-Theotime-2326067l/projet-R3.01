@@ -1,7 +1,10 @@
 body{
     text-align: center;
     align-content: center;
-    background-color: red;
+    background-image: url("tendGodIMG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     font-family: "Bodoni MT";
 
 }
@@ -10,10 +13,19 @@ body{
     float: left;
     margin-right: 2%;
 }
+.tenIMG2{
+    float: right;
+    margin-right: 2%;
+}
+
 @media (min-width: 1024px) { /* pour les écrans d'ordinateurs*/
     .tenIMG {
         width: 20%;
     }
+    .tenIMG2 {
+        width: 20%;
+    }
+
     body    {
         font-size: 150%;
 
@@ -24,7 +36,9 @@ body{
     @media (max-width: 768px) {
         .tenIMG {
             width: 40%;
-        }
+        }.tenIMG2 {
+             width: 40%;
+         }
         body{
             width: 100%;
         }
@@ -37,15 +51,18 @@ body{
         justify-content: space-between;
         align-items: center;
         box-shadow: 1px 1px 20px burlywood;
-        background-color: orange;
+        background-color: rgba(255, 255, 255, 0.1);
+
+        backdrop-filter: blur(20px);
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
     .tenText{
-        text-align: right;
         margin-right: 2%;
         margin-left: 2%;
+        text-align: center;
+
     }
 
 
@@ -79,11 +96,8 @@ body{
 header{
     top: 0;
     display: flex;
-    border: solid;
-    box-shadow: 1px 1px 20px black;
     color: white;
     justify-content: space-between;
     width: 100%;
-    background-color: beige;
     position: sticky;
 }

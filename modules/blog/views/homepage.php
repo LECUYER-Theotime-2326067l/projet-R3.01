@@ -4,6 +4,7 @@ $css_file = "homepage.css";
 include __DIR__ . '/header.php';
 headerPage("Accueil", $css_file);
 ?>
+
 <h1>
     Les Tenracs
 </h1>
@@ -33,6 +34,13 @@ headerPage("Accueil", $css_file);
     </div>
     <div class="tenDiv">
         <p class="tenText">
+            <img src="blog/views/css/tendGodIMG.jpg" class="tenIMG2">
+            Ici nous nous retrouvons entre fidèles de l'ordre des Tenracs, les plus grands adeptes de ce plat.
+            Si vous continuez sur ce site, vous pourrez trouver différentes choses en lien avec les Tenders à la raclette.
+            Nous gérons des clubs qui organisent des repas entre adeptes. Si vous voulez rejoindre l'un de ces fameux club, n'hésitez pas
+            à vous inscrire. Nous les Tenracs sommes une famille née d'amour, de poulet et de fromage.
+            Il n'y a aucune crainte à avoir à nous rejoindre, si vous aimez réellement de tout votre coeur les Tenders à la raclette
+            alors, l'ordre des Tenrac vous accueillera à bras ouverts.
 
         </p>
     </div>
