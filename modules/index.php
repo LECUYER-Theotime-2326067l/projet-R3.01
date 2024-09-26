@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/../_assets/includes/autoloader.php';
-require __DIR__ . '/../modules/blog/controllers/homepage.php';
 
 try {
     if (filter_input(INPUT_GET, 'action')) {
@@ -12,9 +11,14 @@ try {
         }
         if ($_GET['action'] === 'post'){
             if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-                (new \modules\blog\controllers\PostController())->execute($_GET['id']);
+                (new \modules\blog\controllers\post())->execute($_GET['id']);
             } 
             throw new ControllerException('Aucun identifiant de billet envoyé');
+        }
+        if ($_GET['action'] === ''){
+            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0){
+                //(new \modules\blog\controllers\);
+            }
         }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
