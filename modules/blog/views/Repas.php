@@ -1,8 +1,8 @@
 <?php
 
-$css_file = "homepage.css";
+$css_file = "Repas.css";
 include __DIR__ . '/header.php';
-headerPage("Acceuil", $css_file);
+headerPage("Repas", $css_file);
 ?>
 <body>
 <h1>

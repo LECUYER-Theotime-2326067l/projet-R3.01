@@ -1,8 +1,8 @@
 <?php
 
-$css_file = "homepage.css";
+$css_file = "connexion.css";
 include __DIR__ . '/header.php';
-headerPage("Acceuil", $css_file);
+headerPage("Connexion", $css_file);
 ?>
 <body>
 <form method="post" action="connexion.php" id="connect" class="connect">
@@ -20,5 +20,6 @@ headerPage("Acceuil", $css_file);
     </div>
 <input type="submit" class="but" value="Connexion">
 </form>
+<div class="place"></div>
 </body>
 <?php include 'footer.php'?>

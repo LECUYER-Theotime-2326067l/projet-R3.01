@@ -1,9 +1,9 @@
 
 <?php
 
-$css_file = "homepage.css";
+$css_file = "ordre.css";
 include __DIR__ . '/header.php';
-headerPage("Acceuil", $css_file);
+headerPage("Ordre", $css_file);
 ?>
 <body>
 
