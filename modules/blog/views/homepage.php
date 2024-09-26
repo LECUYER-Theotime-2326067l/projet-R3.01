@@ -1,6 +1,6 @@
 <?php
 
-$css_file = "css/homepage.css";
+$css_file = "homepage.css";
 include __DIR__ . '/header.php';
 headerPage("Acceuil", $css_file);
 ?>
