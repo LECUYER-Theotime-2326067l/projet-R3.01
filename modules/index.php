@@ -10,6 +10,12 @@ try {
             }
             throw new ControllerException('Aucun identifiant de billet envoyé');
         }
+        if ($_GET['action'] === 'post'){
+            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
+                (new \modules\blog\controllers\PostController())->execute($_GET['id']);
+            } 
+            throw new ControllerException('Aucun identifiant de billet envoyé');
+        }
         throw new ControllerException('La page que vous recherchez n\'existe pas');
     }
     (new \modules\blog\controllers\homepage())->execute();
