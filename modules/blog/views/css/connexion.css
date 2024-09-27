@@ -1,7 +1,11 @@
 body{
     text-align: center;
     align-content: center;
-    background-color: red;
+    background-image: url("tendGodIMG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "Bodoni MT";
 
 }
 .connect{
@@ -10,9 +14,6 @@ body{
     font-family: Arial;
 
 }
-.place{
-    min-height: 100vh;
-}
 .mdp{
     margin-bottom: 20px;
     margin-top: 20px;
@@ -20,14 +21,16 @@ body{
 header{
     top: 0;
     display: flex;
-    border: solid;
-    box-shadow: 1px 1px 20px black;
     color: white;
     justify-content: space-between;
     width: 100%;
-    background-color: beige;
     position: sticky;
+    max-height: 10%;
 }
+.logo{
+    width: 50px;
+}
+
 
 .btn {
     text-decoration: none;

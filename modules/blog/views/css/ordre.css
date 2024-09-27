@@ -19,13 +19,14 @@ header{
 header{
     top: 0;
     display: flex;
-    border: solid;
-    box-shadow: 1px 1px 20px black;
     color: white;
     justify-content: space-between;
     width: 100%;
-    background-color: beige;
     position: sticky;
+    max-height: 10%;
+}
+.logo{
+    width: 50px;
 }
 
 .btn {

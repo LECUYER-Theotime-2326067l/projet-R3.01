@@ -100,4 +100,8 @@ header{
     justify-content: space-between;
     width: 100%;
     position: sticky;
+    max-height: 10%;
+}
+.logo{
+    width: 50px;
 }

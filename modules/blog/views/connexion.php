@@ -1,10 +1,10 @@
 <?php
-
 $css_file = "connexion.css";
 include __DIR__ . '/header.php';
 headerPage("Connexion", $css_file);
 ?>
-<body>
+<meta name="description" content="Cette page est la page pour se connecter a notre site">
+
 <form method="post" action="connexion.php" id="connect" class="connect">
     <div class="mail">
         <libellé>
@@ -20,6 +20,5 @@ headerPage("Connexion", $css_file);
     </div>
 <input type="submit" class="but" value="Connexion">
 </form>
-<div class="place"></div>
-</body>
+
 <?php include 'footer.php'?>

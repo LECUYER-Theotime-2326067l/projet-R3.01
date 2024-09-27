@@ -4,19 +4,22 @@ footer{
     bottom: 0;
     object-position: bottom;
     width: 100%;
+    box-shadow: 1px 1px 20px burlywood;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(30px);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .footerhaut{
     display: flex;
-    box-shadow: 1px 1px 20px black;
     justify-content: space-between;
-    width: 100%;
-    background-color: beige;
+
 
 }
 .footerbas{
     display: flex;
     color: black;
     flex-direction: column;
-    width: 100%;
-    background-color: beige;
+
 }
