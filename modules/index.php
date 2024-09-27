@@ -11,7 +11,7 @@ try {
         }
         if ($_GET['action'] === 'post'){
             if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-                (new \modules\blog\controllers\post())->execute($_GET['id']);
+                (new post())->execute($_GET['id']);
             } 
             throw new ControllerException('Aucun identifiant de billet envoyé');
         }
@@ -24,5 +24,5 @@ try {
     }
     (new homepageController())->execute();
 } catch (ControllerException $e) {
-    (new \modules\blog\views\error($e->getMessage()))->show();
+    (new error($e->getMessage()))->show();
 }

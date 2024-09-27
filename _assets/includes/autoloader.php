@@ -40,12 +40,12 @@ final class autoloader //fonction pour les chargements
     
     private static function _load ($S_fileToLoad)  // Méthode privée qui fait réellement l'inclusion des fichiers
     {   
-        echo $S_fileToLoad;
-        echo "<br>";
+        // echo $S_fileToLoad;
+        // echo "<br>";
 
         if (is_readable($S_fileToLoad)) // Vérifie si le fichier est lisible et existant avant de l'inclure
         {
-            echo "j'ai trouvé<br>";
+            // echo "j'ai trouvé<br>";
             require $S_fileToLoad; // Inclus le fichier de la classe correspondante
         }
     }
