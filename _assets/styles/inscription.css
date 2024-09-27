@@ -1,0 +1,51 @@
+/* Styles de base pour le corps */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour le formulaire de connexion */
+.connect {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les champs de saisie */
+.inpo {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styles pour le bouton de soumission */
+.but {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.but:hover {
+  background-color: #4cae4c;
+}
+
+/* Style pour les genres*/
+.libelleGenre {
+  height: 10px;
+}
+.genre {
+  cursor: pointer;
+}
