@@ -40,15 +40,15 @@ headerPage("Acceuil", $css_file);
 		<div class="grade">
 				<p>Selectionnez le grade :
 			<select name="grade">
-				<option value="Homme">Affilié</option>
-				<option value="Femme">Sympathisant</option>
-				<option value="Homme">Adhérant</option>
-				<option value="Femme">Chevalier</option>
-				<option value="Homme">Dame</option>
-				<option value="Femme">Grand Chevalier</option>
-				<option value="Homme">Haute Dame</option>
-				<option value="Femme">Commander</option>
-				<option value="Homme">Grand'Croix</option>
+				<option value="Affilié">Affilié</option>
+				<option value="Sympathisant">Sympathisant</option>
+				<option value="Adhérant">Adhérant</option>
+				<option value="Chevalier">Chevalier</option>
+				<option value="Dame">Dame</option>
+				<option value="Grand Chevalier">Grand Chevalier</option>
+				<option value="Haute Dame">Haute Dame</option>
+				<option value="Commander">Commander</option>
+				<option value="Grand'Croix">Grand'Croix</option>
 			</select> 
 			</div>
 		<button type="submit" name="envoyer" class="but">Insciption</button>
