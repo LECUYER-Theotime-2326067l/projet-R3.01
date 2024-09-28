@@ -10,6 +10,7 @@ footer{
     backdrop-filter: blur(30px);
     margin-top: 20px;
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 .footerhaut{
     display: flex;
