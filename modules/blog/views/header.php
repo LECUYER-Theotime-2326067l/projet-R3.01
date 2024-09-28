@@ -8,18 +8,12 @@ function headerPage($page_title = "Titre par DÃ©faut", $css_file = "Titre par dÃ
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="blog/views/css/<?php echo $css_file; ?>">
     <link rel="icon" href="blog/views/css/logo.png">
-=======
-    <link rel="stylesheet" href="css/<?php echo $css_file; ?>">
-
->>>>>>> main
     <title><?php echo $page_title; ?></title>
 </head>
 <body>
 <header>
-<<<<<<< HEAD
     <img src="blog/views/css/logo.png" class="logo" alt="logo">
     <a href="index.php?action=homepage" class="btn">Accueil</a>
     <a href="index.php?action=repas&id=1" class="btn">Repas</a>
@@ -29,15 +23,6 @@ function headerPage($page_title = "Titre par DÃ©faut", $css_file = "Titre par dÃ
 
     +
     </a>
-=======
-    <a href="" class="btn">acceuil</a>
-    <a href="" class="btn">repas</a>
-    <a href="" class="btn">structure</a>
-    <a href="" class="btn">plat</a>
-    <button class="btn">
-        +
-    </button>
->>>>>>> main
 </header>
 </body>
 
