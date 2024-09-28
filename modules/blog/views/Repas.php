@@ -5,6 +5,7 @@ include __DIR__ . '/header.php';
 headerPage("Repas", $css_file);
 ?>
 <meta name="description" content="Cette page liste les repas de l'ordre des tenrac">
+<main>
 <h1>
     Repas
 </h1>
@@ -19,5 +20,5 @@ headerPage("Repas", $css_file);
     <div class="box">
         list3
     </div>
-
+</main>
 <?php include 'footer.php'?>

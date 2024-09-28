@@ -1,10 +1,22 @@
 body{
     text-align: center;
     align-content: center;
-    background-color: red;
-    flex-wrap: wrap;
+    background-image: url("tendGodIMG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "Bodoni MT";
+    min-height: 100vh;
+    flex-grow: 1;
+
 }
 
+main {
+    flex-grow: 1;  /* Permet de remplir l'espace restant */
+    align-items: center;  /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+}
 
 .box{
     background-color: darksalmon;
@@ -15,20 +27,6 @@ body{
     margin-right: 2%;
 
 }
-
-header{
-    top: 0;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    width: 100%;
-    position: sticky;
-    max-height: 10%;
-}
-.logo{
-    width: 50px;
-}
-
 
 .btn {
     text-decoration: none;
@@ -55,4 +53,16 @@ header{
     box-shadow: 1px 1px 4px #000000;
     -webkit-box-shadow: 1px 1px 4px #000000;
     -moz-box-shadow: 1px 1px 4px #000000;
+}
+header{
+    top: 0;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    max-height: 10%;
+}
+.logo{
+    width: 50px;
 }
