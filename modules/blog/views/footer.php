@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+<link rel="stylesheet" href="blog/views/css/footer.css">
+<footer>
+    <div class="footerhaut">
+
+    </div>
+    <div class="footerbas">
+        <p>Nous contacter:lefaitepassvp<br></p>
+=======
 <link rel="stylesheet" href="css/footer.css">
 <footer>
     <div class="footerhaut">
@@ -9,6 +18,7 @@
     <div class="footerbas">
         <p>g<br></p>
         <p>blabla</p>
+>>>>>>> main
     </div>
 
 </footer>

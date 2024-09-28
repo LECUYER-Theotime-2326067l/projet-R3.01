@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+
+footer{
+    position: relative;
+    bottom: 0;
+    object-position: bottom;
+    width: 100%;
+    box-shadow: 1px 1px 20px burlywood;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(30px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.footerhaut{
+    display: flex;
+    justify-content: space-between;
+
+=======
 footer{
 
 }
@@ -7,12 +27,17 @@ footer{
     justify-content: space-between;
     width: 100%;
     background-color: beige;
+>>>>>>> main
 
 }
 .footerbas{
     display: flex;
     color: black;
     flex-direction: column;
+<<<<<<< HEAD
+
+=======
     width: 100%;
     background-color: beige;
+>>>>>>> main
 }
