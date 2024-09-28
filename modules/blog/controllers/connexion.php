@@ -2,7 +2,7 @@
 namespace modules\blog\controllers;
 class connexion {
     public function execute() {
-        $fichierPhp =  'blog/views/connexion.php';
+        $fichierPhp =  constants::directoryViews().'connexion.php';
 
         if (file_exists($fichierPhp)) {
             require_once $fichierPhp;
