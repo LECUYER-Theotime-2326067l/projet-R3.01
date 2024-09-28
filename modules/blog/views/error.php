@@ -1,18 +1,8 @@
 <?php
 
-namespace modules\blog\views;
+$css_file = "ordre.css";
+include __DIR__ . '/header.php';
+headerPage("Ordre", $css_file);
+?>
 
-class error
-{
-    private $message;
-
-    public function __construct($message)
-    {
-        $this->message = $message;
-    }
-
-    public function show()
-    {
-        echo "<h1>Erreur : " . htmlspecialchars($this->message) . "</h1>";
-    }
-}
+<?php include 'footer.php'?>
