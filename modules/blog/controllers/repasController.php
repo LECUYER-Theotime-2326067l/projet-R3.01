@@ -1,8 +1,8 @@
 <?php
 
-class connexion {
+ class repasController {
     public function execute() {
-        $fichierPhp =  constants::directoryViews().'connexion.php';
+        $fichierPhp = constants::directoryViews() . 'repas.php';
 
         if (file_exists($fichierPhp)) {
             require_once $fichierPhp;
@@ -10,4 +10,4 @@ class connexion {
             echo "Le fichier PHP n'a pas été trouvé.";
         }
     }
-}
+ }

@@ -2,25 +2,36 @@
 require __DIR__ . '/../_assets/includes/autoloader.php';
 
 try {
-    $action = filter_input(INPUT_GET, 'action') ?? 'homepage';  // Par défaut, action est 'homepage'
+        $action = filter_input(INPUT_GET, 'action') ?? 'homepage';  // Par défaut, action est 'homepage'
 
-    if ($action === 'homepage') {
-        (new homepageController())->execute();
-    } elseif ($action === 'post') {
-        if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-            (new post())->execute($_GET['id']);
-        } else {
-            throw new Exception('Aucun identifiant de billet envoyé');
+        if ($action === 'homepage') {
+            (new homepageController())->execute();
         }
-    } elseif ($action === 'connexion') {
-        if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-            (new connexion())->execute($_GET['id']);
-        } else {
-            throw new Exception('Aucun identifiant de billet envoyé');
+        elseif ($action === 'post') {
+            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
+                (new postController())->execute($_GET['id']);
+            } else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
         }
-    } else {
-        throw new Exception('La page que vous recherchez n\'existe pas');
-    }
+        elseif ($action === 'connexion') {
+            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
+                (new connexionController())->execute($_GET['id']);
+            } else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
+        elseif ($action === 'repas') {
+            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
+                (new repasController())->execute($_GET['id']);
+            } else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        } 
+        else {
+            throw new Exception('La page que vous recherchez n\'existe pas');
+        }
 } catch (Exception $e) {
-    echo 'Erreur : ' . $e->getMessage();
+    $errorMessage = $e->getMessage();
+    require constants::directoryViews() . 'error.php';  // Appel à la vue d'erreur avec le message
 }
