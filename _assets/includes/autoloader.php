@@ -2,7 +2,6 @@
 
 require __DIR__ . '\constants.php';
 
-
 final class autoloader //fonction pour les chargements
 {
     public static function loadClassCore ($S_nameClasse) // fonction pour charger  le noyaux, le S_ est pour dire qu'elle est static
@@ -28,13 +27,11 @@ final class autoloader //fonction pour les chargements
     public static function loadClassesViews ($S_nameClasse)
     {
         $S_file = constants::directoryViews() . "$S_nameClasse.php";// Construit le chemin complet vers la classe views à partir du nom de classe
-        
         return static::_load($S_file);
     }
     public static function loadClassesControllers ($S_nameClasse)
     {
-        $S_file = constants::directoryControllers() . "$S_nameClasse.php";
-        
+        $S_file = constants::directoryControllers() . "$S_nameClasse.php";     
         return static::_load($S_file);
     }
     

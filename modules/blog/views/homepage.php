@@ -5,6 +5,7 @@ include __DIR__ . '/header.php';
 headerPage("Accueil", $css_file);
 ?>
 <meta name="description" content="Cette page décrit ce que sont les tenrac, c'est notre page principale">
+
 <h1>
     Les Tenracs
 </h1>
@@ -41,10 +42,10 @@ headerPage("Accueil", $css_file);
             à vous inscrire. Nous les Tenracs sommes une famille née d'amour, de poulet et de fromage.
             Il n'y a aucune crainte à avoir à nous rejoindre, si vous aimez réellement de tout votre coeur les Tenders à la raclette
             alors, l'ordre des Tenrac vous accueillera à bras ouverts.
+
         </p>
     </div>
 
 </div>
 
 <?php include 'footer.php'?>
-
