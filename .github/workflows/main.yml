@@ -9,4 +9,4 @@ jobs:
     - name: Install lftp
       run: sudo apt install lftp
     - name: download userfiles
-      run: lftp -c "set ssl:verify-certificate false; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}; mirror -n -v www/* *"
+      run: lftp -c "set ssl:verify-certificate false; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}; mirror -n -v www ."
