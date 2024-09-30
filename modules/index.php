@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/../_assets/includes/autoloader.php';
-
+session_start();
 try {
         $action = filter_input(INPUT_GET, 'action') ?? 'homepage';  // Par défaut, action est 'homepage'
 

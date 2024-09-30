@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 function headerPage($page_title = "Titre par Défaut", $css_file = "Titre par défaut")
 {
 ?>
