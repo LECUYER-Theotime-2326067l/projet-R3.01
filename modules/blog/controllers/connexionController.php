@@ -1,9 +1,8 @@
 <?php
- namespace modules\blog\controllers;
 
- class homepage {
+class connexionController {
     public function execute() {
-        $fichierPhp = __DIR__ . '/../views/homepage.php';
+        $fichierPhp =  constants::directoryViews().'connexion.php';
 
         if (file_exists($fichierPhp)) {
             require_once $fichierPhp;
@@ -11,4 +10,4 @@
             echo "Le fichier PHP n'a pas été trouvé.";
         }
     }
- }
+}

@@ -1,10 +1,11 @@
 <?php
 $css_file = "connexion.css";
+include constants::directoryModels() . '/connexionModels.php';
 include constants::directoryViews() . '/header.php';
 headerPage("Connexion", $css_file);
-if (isset($_SESSION['user'])) {
+
+if (isset($_SESSION['USER'])) {
     header('Location: index.php?action=homepage');
-    exit();
 }
 ?>
 

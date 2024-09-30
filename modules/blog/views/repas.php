@@ -1,18 +1,18 @@
 <?php
 
-$css_file = "post.css";
+$css_file = "repas.css";
 include constants::directoryViews() . '/header.php';
-headerPage("Post", $css_file);
+headerPage("repas", $css_file);
 ?>
 <meta name="description" content="Cette page liste les repas de l'ordre des tenrac">
 <main>
 <h1>
-    Les Post du jour !
+    Repas
 </h1>
     <div class="box">
-        Personne1 : <br>
-        Image : <br>
-        etc : <br>
+        Adresse : <br>
+        Date : <br>
+        Gérant : <br>
     </div>
     <div class="box">
         list2
