@@ -7,6 +7,7 @@ function headerPage($page_title = "Titre par D√©faut", $css_file = "Titre par d√
 
     $isLoggedIn = isset($_SESSION['user']);
     $userEmail = $isLoggedIn ? $_SESSION['user']['email'] : null;
+    $userName = $isLoggedIn ? $_SESSION['user']['name'] : null; // Assurez-vous d'obtenir le nom
 ?>
 <!DOCTYPE HTML>
 <html lang="fr">
@@ -26,7 +27,7 @@ function headerPage($page_title = "Titre par D√©faut", $css_file = "Titre par d√
     <a href="index.php?action=post&id=3" class="btn">Post</a>
     
     <?php if ($isLoggedIn): ?>
-        <a href="index.php?action=profil" class="btn"><?php echo htmlspecialchars($userEmail); ?></a>
+        <a href="index.php?action=profil" class="btn"><?php echo htmlspecialchars($userName); ?></a> <!-- Utiliser le nom de l'utilisateur -->
         <a href="index.php?action=logout" class="btn">D√©connexion</a>
     <?php else: ?>
         <a href="index.php?action=connexion&id=4" class="btn">Connexion</a>
