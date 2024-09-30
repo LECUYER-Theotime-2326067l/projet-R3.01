@@ -13,7 +13,7 @@
      $user = new user($db);
     
      $user->createTableUser();
- 
+
      $user->userName = 'Killian Gurrea';
      $user->userEmail = 'killian.gurrea@etu.univ-amu.fr';
      $user->userPassword = 'Killian-gurrea-69';
