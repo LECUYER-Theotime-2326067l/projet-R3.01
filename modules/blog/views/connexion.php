@@ -6,6 +6,7 @@ headerPage("Connexion", $css_file);
 
 if (isset($_SESSION['USER'])) {
     header('Location: index.php?action=homepage');
+
 }
 ?>
 

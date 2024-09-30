@@ -48,6 +48,7 @@ try {
     else {
         throw new Exception('La page que vous recherchez n\'existe pas');
     }
+
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
     require constants::directoryViews() . 'error.php';  // Appel à la vue d'erreur avec le message
