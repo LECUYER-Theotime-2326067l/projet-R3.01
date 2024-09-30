@@ -10,7 +10,7 @@ final class Constants
 
     // Méthodes pour obtenir les chemins complets
     public static function directoryRoot() {
-    return realpath(__DIR__ . '../../../'); // Chemin vers le répertoire racine  
+        return realpath(__DIR__ . '/../../'); // Chemin vers le répertoire racine
     }
 
     public static function directoryCore(){
