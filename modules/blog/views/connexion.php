@@ -22,7 +22,7 @@ include constants::directoryModels() . '/connexionModels.php';
             <input type="password" placeholder="Mot de passe" name="password" class="inpo" required><br>
         </div>
         <input type="submit" class="but" value="Connexion">
-        <p>Pas encore de compte ? <a href="inscription.php">Contactez-nous</a></p>
+        <p>Pas encore de compte ? <a href="index.php?action=nousContacter&id=5">Contactez-nous</a></p>
 
         <?php if (isset($message)): ?>
             <p class="error-message"><?php echo htmlspecialchars($message); ?></p>
