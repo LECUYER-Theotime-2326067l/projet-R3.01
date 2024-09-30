@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '\constants.php';
+require __DIR__ . '/constants.php';
 
 final class autoloader //fonction pour les chargements
 {
