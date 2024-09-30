@@ -22,7 +22,7 @@ function headerPage($page_title = "Titre par D√©faut", $css_file = "Titre par d√
     <img src="blog/views/css/logo.png" class="logo" alt="logo">
     <a href="index.php?action=homepage" class="btn">Accueil</a>
     <a href="index.php?action=repas&id=1" class="btn">Repas</a>
-    <a href="index.php?action=ordre&id=2" class="btn">Structure</a>
+    <a href="index.php?action=structure&id=2" class="btn">Structure</a>
     <a href="index.php?action=post&id=3" class="btn">Post</a>
     
     <?php if ($isLoggedIn): ?>

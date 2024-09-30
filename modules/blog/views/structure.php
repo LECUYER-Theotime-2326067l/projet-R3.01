@@ -1,9 +1,11 @@
 <?php
 
-$css_file = "ordre.css";
+$css_file = "structure.css";
 include constants::directoryViews() . '/header.php';
-headerPage("Ordre", $css_file);
+headerPage("Structure", $css_file);
 ?>
-
+<main>
+    ordre
+</main>
 
 <?php include 'footer.php'?>
