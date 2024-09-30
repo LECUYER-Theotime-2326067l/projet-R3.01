@@ -180,6 +180,16 @@ class tenracBase{
         return false;
 	}
 
+    public function updatePlat(){
+        $query = "ALTER TABLE PLAT MODIFY platID INT";
+
+        $stmt = $this->conn->prepare($query);
+
+        if($stmt->execute())
+            return true;
+        return false;
+    }
+
 	//		fonction INGREDIENT		//
 	public $ingredientName;
 	public $alimentQuantity;

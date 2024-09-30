@@ -1,4 +1,5 @@
 <?php
+include_once 'database.php';
 class user{
         private $conn;
         public $table = 'USER';
@@ -11,6 +12,8 @@ class user{
         public $userGender;
         public $userGrade;
         public $userRank;
+        public $userTitre;
+        public $userDignite;
 
         //construtor avec connexion à la base de données
         public function __construct($db){
@@ -22,10 +25,12 @@ class user{
             $query = "CREATE TABLE IF NOT EXISTS USER (userID INT AUTO_INCREMENT PRIMARY KEY, 
 													   userName VARCHAR(20),
 													   userEmail VARCHAR(40),
-													   userPassword VARCHAR(40),
+													   userPassword VARCHAR(255),
 												   	   userGender VARCHAR(10),
 											       	   userGrade VARCHAR(20),
 											       	   userRank VARCHAR(15),
+                                                       userTitre VARCHAR(20),
+                                                       userDignite VARCHAR(20),
 											       	   userCreationDate DATETIME DEFAULT CURRENT_TIMESTAMP
 														 );";									 
 			$stmt = $this->conn->prepare($query);
@@ -38,8 +43,7 @@ class user{
         
         //modif la table user
         public function updateTableUser(){
-			$query = "ALTER TABLE " . $this->table . " ADD userRank VARCHAR(15);
-					  ALTER TABLE " . $this->table . " ADD userCreationDate DATETIME DEFAULT CURRENT_TIMESTAMP;";
+			$query = "ALTER TABLE " . $this->table . " MODIFY userPassword VARCHAR(255);";
 			
 			$stmt = $this->conn->prepare($query);
 			
@@ -67,8 +71,8 @@ class user{
 				echo "cette email existe deja";
 				return false;
 			}
-            $query = "INSERT INTO " . $this->table . "(userName, userEmail, userPassword, userGender, userGrade, userRank) 
-            VALUES(:userName, :userEmail, :userPassword,:userGender, :userGrade, :userRank)";
+            $query = "INSERT INTO " . $this->table . "(userName, userEmail, userPassword, userGender, userGrade, userRank, userTitre, userDignite) 
+            VALUES(:userName, :userEmail, :userPassword,:userGender, :userGrade, :userRank, :userTitre, :userDignite)";
 
             $stmt = $this->conn->prepare($query);
 
@@ -79,14 +83,20 @@ class user{
             $this->userGender = htmlspecialchars(strip_tags($this->userGender));
             $this->userGrade = htmlspecialchars(strip_tags($this->userGrade));
             $this->userRank = htmlspecialchars(strip_tags($this->userRank));
+            $this->userGrade = htmlspecialchars(strip_tags($this->userTitre));
+            $this->userRank = htmlspecialchars(strip_tags($this->userDignite));
 
+			$userPasswordHash = password_hash($this->userPassword, PASSWORD_DEFAULT);
+			
             //lier les paramètres
             $stmt->bindParam(':userName', $this->userName);
             $stmt->bindParam(':userEmail', $this->userEmail);
-            $stmt->bindParam(':userPassword', $this->userPassword);
+            $stmt->bindParam(':userPassword', $userPasswordHash);
             $stmt->bindParam(':userGender', $this->userGender);
             $stmt->bindParam(':userGrade', $this->userGrade);
-            $stmt->bindParam(':userGrade', $this->userRank);
+            $stmt->bindParam(':userRank', $this->userRank);
+            $stmt->bindParam(':userTitre', $this->userTitre);
+            $stmt->bindParam(':userDignite', $this->userDignite);
 
             // exécuter la requête
             if($stmt->execute()){
@@ -97,7 +107,7 @@ class user{
 
         // fonction pour lire tous les utilisateurs
         public function read(){
-            $query = "SELECT userID, userName, userEmail, userPassword, userGender, userGrade
+            $query = "SELECT userID, userName, userEmail, userPassword, userGender, userGrade, userTitre, userDignite
                       FROM " . $this->table;
             
             $stmt = $this->conn->prepare($query);
@@ -108,7 +118,7 @@ class user{
 
         // fonction pour lire un utilisateur par ID
         public function readOneById(){
-            $query = "SELECT userID, userName, userEmail, userPassword, userGender, userGrade
+            $query = "SELECT userID, userName, userEmail, userPassword, userGender, userGrade, userTitre, userDignite
                       FROM " . $this->table . " WHERE userID = ?;";
             
             $stmt = $this->conn->prepare($query);
@@ -133,7 +143,9 @@ class user{
                           userEmail = :userEmail,
                           userPassword = :userPassword,
                           userGender = :userGender,
-                          userGrade = :userGrade
+                          userGrade = :userGrade,
+                          userRank = :userRank,
+                          userDignite = :userDignite
                       WHERE userID = :userID";
             
             $stmt = $this->conn->prepare($query);
@@ -146,6 +158,8 @@ class user{
             $this->userGrade = htmlspecialchars(strip_tags($this->userGrade));
             $this->userID = htmlspecialchars(strip_tags($this->userID));
             $this->userRank = htmlspecialchars(strip_tags($this->userRank));
+            $this->userGrade = htmlspecialchars(strip_tags($this->userTitre));
+            $this->userRank = htmlspecialchars(strip_tags($this->userDignite));
 
             //lier les parametres
             $stmt->bindParam(':userName', $this->userName);
@@ -155,6 +169,9 @@ class user{
             $stmt->bindParam(':userGender', $this->userGender);
             $stmt->bindParam(':userGrade', $this->userGrade);
             $stmt->bindParam(':userGrade', $this->userRank);
+            $stmt->bindParam(':userTitre', $this->userTitre);
+            $stmt->bindParam(':userDignite', $this->userDignite);
+
 
             //executer la requete
             if ($stmt->execute()){
