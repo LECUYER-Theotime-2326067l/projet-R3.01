@@ -7,24 +7,32 @@ if (session_status() == PHP_SESSION_NONE) {
 } else {
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+$serveur = "mysql-lecuyer-theotime-2326067l.alwaysdata.net";
+$db = "lecuyer-theotime-2326067l_tenrac";
+$user = "343207";
+$pass = "tenraczebi";
 
-    $db = new PDO('mysql:host=localhost;dbname=ton_database', 'username', 'password');
+$connection = new PDO("mysql:host=".$serveur.";dbname=".$db."", $user, $pass);
 
-    $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
-    $stmt->execute(['email' => $email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    if (!empty($email) && !empty($password)) {
+        
+    // Préparation de la requête avec des paramètres
+    $requete = $connection->prepare("SELECT * FROM USER WHERE userEmail = :email");
+    $requete->bindParam(':email', $email);
+    $requete->execute();
+    $result = $requete->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = [
-            'id' => $user['id'],
-            'email' => $user['email']
-        ];
-        header('Location: index.php?action=homepage');
+    if ($result && password_verify($password, $result['userPassword'])) { 
+        header('Location: chat.php');
+        exit();
     } else {
-        echo 'Identifiants incorrects.';
+        $message = "Email ou mot de passe incorrect !";
+    }
+    } else {
+        $message = "Veuillez remplir tous les champs !";
     }
 }
 ?>
