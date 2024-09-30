@@ -1,7 +1,6 @@
 <?php
-include_once 'database.php';
-class user{
-        private $conn;
+class modelUser{
+    private $conn;
         public $table = 'USER';
        
         public $tableName; 
@@ -15,55 +14,9 @@ class user{
         public $userTitre;
         public $userDignite;
 
-        //construtor avec connexion à la base de données
         public function __construct($db){
             $this->conn = $db;
         }
-
-        //creer la table user
-        public function createTableUser(){
-            $query = "CREATE TABLE IF NOT EXISTS USER (userID INT AUTO_INCREMENT PRIMARY KEY, 
-													   userName VARCHAR(20),
-													   userEmail VARCHAR(40),
-													   userPassword VARCHAR(255),
-												   	   userGender VARCHAR(10),
-											       	   userGrades VARCHAR(20),
-											       	   userRank VARCHAR(15),
-                                                       userTitre VARCHAR(20),
-                                                       userDignite VARCHAR(20),
-											       	   userCreationDate DATETIME DEFAULT CURRENT_TIMESTAMP
-														 );";									 
-			$stmt = $this->conn->prepare($query);
-			
-			if ($stmt->execute()){
-				return true;
-			}
-			return false;
-        }
-        
-        //modif la table user
-        public function updateTableUser(){
-			$query = "ALTER TABLE " . $this->table . " RENAME COLUMN userGrade TO userGrades;";
-			
-			$stmt = $this->conn->prepare($query);
-			
-			if ($stmt->execute()){
-				return true;
-			}
-			return false;
-		}
-		
-		//delete la table user
-		public function deleteTableUser(){
-			$query = "DROP TABLE " . $this->table;
-			
-			$stmt = $this->conn->prepare($query);
-			
-			if ($stmt->execute()){
-				return true;
-			}
-			return false;
-		}
 
         //fonction pour creer un nouvel utilisateur
         public function createNewUser(){
@@ -211,5 +164,5 @@ class user{
 			}
 			return false;
 		}
-	}
+}
 ?>

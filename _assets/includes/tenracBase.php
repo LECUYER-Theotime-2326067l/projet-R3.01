@@ -11,7 +11,6 @@ class tenracBase{
 
 	// 		fonction ORDRE 		//
 	public $ordreID = 1;
-	public $nameMemberOrdre;
     //création de la table ORDRE
     public function createTableOrdre(){
         $query = "CREATE TABLE IF NOT EXISTS ORDRE(ordreID INT PRIMARY KEY,
@@ -45,6 +44,39 @@ class tenracBase{
         return false;
 	}
 	
+    public function updateOrdre(){
+        $query = "UPDATE ORDRE 
+                  SET ordreID = :ordreID,
+                      clubID = :clubID,
+                      userID = :userID,
+                      lieuID = :lieuID,
+                      repasID = :repasID;";
+        $stmt = $this->conn->prepare($query);
+		
+        $stmt->bindParam(':ordreID', $this->ordreID);	
+        $stmt->bindParam(':clubID', $this->clubID);	
+        $stmt->bindParam(':userID', $this->userID);	
+        $stmt->bindParam(':lieuID', $this->lieuID);	
+        $stmt->bindParam(':repasID', $this->repasID);	
+ 
+        if($stmt->execute())
+             return true;
+        return false;
+    }
+
+    public function deleteOrdre(){
+        $query = "DELETE FROM ORDRE WHERE ordreID = :ordreID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->ordreID = htmlspecialchars(strip_tags($this->ordreID));
+
+        $stmt->bindParam(':ordreID', $this->ordreID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 
 	//		fonction CLUB		//
 	public $clubName;
@@ -72,6 +104,10 @@ class tenracBase{
 				  VALUES (:clubName, :userID, :lieuID);";
 		$stmt = $this->conn->prepare($query);
 		
+        $this->clubName = htmlspecialchars(strip_tags($this->clubName));
+        $this->userID = htmlspecialchars(strip_tags($this->userID));
+        $this->lieuID = htmlspecialchars(strip_tags($this->lieuID));
+          
 		$stmt->bindParam(':clubName', $this->clubName);	
 		$stmt->bindParam(':userID', $this->userID);	
 		$stmt->bindParam(':lieuID', $this->lieuID);	
@@ -90,6 +126,45 @@ class tenracBase{
 			return true;
 		return false;
 	}
+
+    public function updateClub(){
+        if (clubNameExist()){
+            echo "nom de club existant";
+            return false;
+        }
+
+        $query = "UPDATE CLUB 
+                  SET clubName = :clubName,
+                      userID = :userID,
+                      lieuID = :lieuID;";
+        $stmt = $this->conn->prepare($query);
+
+        $this->clubName = htmlspecialchars(strip_tags($this->clubName));
+        $this->userID = htmlspecialchars(strip_tags($this->userID));
+        $this->lieuID = htmlspecialchars(strip_tags($this->lieuID));
+          
+		$stmt->bindParam(':clubName', $this->clubName);	
+		$stmt->bindParam(':userID', $this->userID);	
+		$stmt->bindParam(':lieuID', $this->lieuID);	
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
+
+    public function deleteClub(){
+        $query = "DELETE FROM CLUB WHERE clubID = :clubID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->clubID = htmlspecialchars(strip_tags($this->clubID));
+
+        $stmt->bindParam(':clubID', $this->clubID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 	
 	// 		fonction LIEU		//
 	public $lieuAdress;
@@ -111,6 +186,9 @@ class tenracBase{
 				  VALUES (:lieuAdress, :repasID);";
 		$stmt = $this->conn->prepare($query);
 		
+        $this->lieuAdress = htmlspecialchars(strip_tags($this->lieuAdress));
+        $this->repasID = htmlspecialchars(strip_tags($this->repasID));
+
 		$stmt->bindParam(':lieuAdress', $this->lieuAdress);	
 		$stmt->bindParam(':repasID', $this->repasID);	
 
@@ -118,6 +196,37 @@ class tenracBase{
             return true;
         return false;
 	}
+
+    public function updateLieu(){
+        $query = "UPDATE LIEU 
+                  SET lieuAdress = :lieuAdress,
+                      repasID = :repasID;";
+        $stmt = $this->conn->prepare($query);
+
+        $this->lieuAdress = htmlspecialchars(strip_tags($this->lieuAdress));
+        $this->repasID = htmlspecialchars(strip_tags($this->repasID));
+
+		$stmt->bindParam(':lieuAdress', $this->lieuAdress);	
+		$stmt->bindParam(':repasID', $this->repasID);	
+
+        if($stmt->execute())
+            return true;
+        return false;
+    }
+
+    public function deleteLieu(){
+        $query = "DELETE FROM LIEU WHERE lieuID = :lieuID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->lieuID = htmlspecialchars(strip_tags($this->lieuID));
+
+        $stmt->bindParam(':lieuID', $this->lieuID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 
 	//		fonction REPAS		//
 	public $repasName;
@@ -142,6 +251,10 @@ class tenracBase{
 				  VALUES (:repasName, :platID, :userID);";
 		$stmt = $this->conn->prepare($query);
 		
+        $this->repasName = htmlspecialchars(strip_tags($this->repasName));
+        $this->platID = htmlspecialchars(strip_tags($this->platID));
+        $this->userID = htmlspecialchars(strip_tags($this->userID));      
+
 		$stmt->bindParam(':repasName', $this->repasName);	
 		$stmt->bindParam(':platID', $this->platID);	
 		$stmt->bindParam(':userID', $this->userID);	
@@ -150,6 +263,40 @@ class tenracBase{
             return true;
         return false;
 	}
+
+    public function updateRepas(){
+        $query = "UPDATE REPAS 
+                  SET repasName = :repasName,
+                      platID = :platID,
+                      userID = :userID;";
+        $stmt = $this->conn->prepare($query);
+
+        $this->repasName = htmlspecialchars(strip_tags($this->repasName));
+        $this->platID = htmlspecialchars(strip_tags($this->platID));
+        $this->userID = htmlspecialchars(strip_tags($this->userID));      
+
+		$stmt->bindParam(':repasName', $this->repasName);	
+		$stmt->bindParam(':platID', $this->platID);	
+		$stmt->bindParam(':userID', $this->userID);	
+
+        if($stmt->execute())
+            return true;
+        return false;
+    }
+
+    public function deleteRepas(){
+        $query = "DELETE FROM REPAS WHERE repasID = :repasID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->repasID = htmlspecialchars(strip_tags($this->repasID));
+
+        $stmt->bindParam(':repasID', $this->repasID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 	
 	//		fonction PLAT 		//
 	public $platName;
@@ -168,10 +315,15 @@ class tenracBase{
         return false;
     }
     public function addPlat(){
-		$query = "INSERT INTO PLAT (platName, ingredientID) 
-				  VALUES (:platName, :ingredientID);";
+		$query = "INSERT INTO PLAT (platID, platName, ingredientID) 
+				  VALUES (:platID, :platName, :ingredientID);";
 		$stmt = $this->conn->prepare($query);
 		
+        $this->platID = htmlspecialchars(strip_tags($this->platID));
+        $this->platName = htmlspecialchars(strip_tags($this->platName));
+        $this->ingredientID = htmlspecialchars(strip_tags($this->ingredientID));
+
+		$stmt->bindParam(':platID', $this->platID);	
 		$stmt->bindParam(':platName', $this->platName);	
 		$stmt->bindParam(':ingredientID', $this->ingredientID);	
 
@@ -179,6 +331,41 @@ class tenracBase{
             return true;
         return false;
 	}
+
+    public function updatePlat(){
+        $query = "UPDATE PLAT 
+                  SET platID = :platID,
+                      platName = :platName,
+                      ingredientID = :ingredientID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->platID = htmlspecialchars(strip_tags($this->platID));
+        $this->platName = htmlspecialchars(strip_tags($this->platName));
+        $this->ingredientID = htmlspecialchars(strip_tags($this->ingredientID));
+
+		$stmt->bindParam(':platID', $this->platID);	
+		$stmt->bindParam(':platName', $this->platName);	
+		$stmt->bindParam(':ingredientID', $this->ingredientID);	
+
+        if($stmt->execute())
+            return true;
+        return false;
+    }
+
+    public function deletePlat(){
+        $query = "DELETE FROM PLAT WHERE platID = :platID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->platID = htmlspecialchars(strip_tags($this->platID));
+
+        $stmt->bindParam(':platID', $this->platID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 
 	//		fonction INGREDIENT		//
 	public $ingredientName;
@@ -214,7 +401,15 @@ class tenracBase{
 				  VALUES (:ingredientName, :alimentQuantity, :alimentPoids, :allergieID, :croyanceID, :convictionID);";
 		$stmt = $this->conn->prepare($query);
 		
-		$stmt->bindParam(':ingredientName', $this->ingredientName);		
+		$this->ingredientName = htmlspecialchars(strip_tags($this->ingredientName));
+        $this->alimentQuantity = htmlspecialchars(strip_tags($this->alimentQuantity));
+        $this->alimentPoids = htmlspecialchars(strip_tags($this->alimentPoids));
+        $this->allergieID = htmlspecialchars(strip_tags($this->allergieID));
+        $this->croyanceID = htmlspecialchars(strip_tags($this->croyanceID));
+        $this->convictionID = htmlspecialchars(strip_tags($this->convictionID));
+     
+        
+        $stmt->bindParam(':ingredientName', $this->ingredientName);		
 		$stmt->bindParam(':alimentQuantity', $this->alimentQuantity);		
 		$stmt->bindParam(':alimentPoids', $this->alimentPoids);		
 		$stmt->bindParam(':allergieID', $this->allergieID);		
@@ -225,6 +420,50 @@ class tenracBase{
             return true;
         return false;
 	}
+
+    public function updateIngredient(){
+        $query = "UPDATE INGREDIENT 
+                 SET ingredientName = :ingredientName,
+                     alimentQuantity = :alimentQuantity,
+                     alimentPoids = :alimentPoids,
+                     allergieID = :allergieID,
+                     croyanceID = :croyanceID,
+                     convictionID = :convictionID;";
+        $stmt = $this->conn->prepare($query);
+
+        $this->ingredientName = htmlspecialchars(strip_tags($this->ingredientName));
+        $this->alimentQuantity = htmlspecialchars(strip_tags($this->alimentQuantity));
+        $this->alimentPoids = htmlspecialchars(strip_tags($this->alimentPoids));
+        $this->allergieID = htmlspecialchars(strip_tags($this->allergieID));
+        $this->croyanceID = htmlspecialchars(strip_tags($this->croyanceID));
+        $this->convictionID = htmlspecialchars(strip_tags($this->convictionID));
+     
+        
+        $stmt->bindParam(':ingredientName', $this->ingredientName);		
+		$stmt->bindParam(':alimentQuantity', $this->alimentQuantity);		
+		$stmt->bindParam(':alimentPoids', $this->alimentPoids);		
+		$stmt->bindParam(':allergieID', $this->allergieID);		
+		$stmt->bindParam(':croyanceID', $this->croyanceID);		
+		$stmt->bindParam(':convictionID', $this->convictionID);
+
+        if($stmt->execute())
+            return true;
+        return false;
+    }
+
+    public function deleteIngredient(){
+        $query = "DELETE FROM INGREDIENT WHERE ingredientID = :ingredientID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->ingredientID = htmlspecialchars(strip_tags($this->ingredientID));
+
+        $stmt->bindParam(':ingredientID', $this->ingredientID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 
 	//		fonction ALLERGIE		//
 	public $allergieCategory;
@@ -250,6 +489,20 @@ class tenracBase{
             return true;
         return false;
 	}
+    
+    public function deleteAllergie(){
+        $query = "DELETE FROM ALLERGIE WHERE allergieID = :allergieID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->allergieID = htmlspecialchars(strip_tags($this->allergieID));
+
+        $stmt->bindParam(':allergieID', $this->allergieID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 
 	//		fonction CROYANCE		//
 	public $croyanceCategory;
@@ -275,6 +528,20 @@ class tenracBase{
             return true;
         return false;
 	}
+    
+    public function deleteCroyance(){
+        $query = "DELETE FROM CROYANCE WHERE croyanceID = :croyanceID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->croyanceID = htmlspecialchars(strip_tags($this->croyanceID));
+
+        $stmt->bindParam(':croyanceID', $this->croyanceID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
 
 	//		fonction CONVICTION		//
 	public $convictionCategory;
@@ -295,12 +562,27 @@ class tenracBase{
 				VALLUES(:convictionCategory);";
 		$stmt = $this->conn->prepare($query);
 		
+        $this->convictionID = htmlspecialchars(strip_tags($this->convictionID));
+
 		$stmt->bindParam(':convictionCategory', $this->convictionCategory);
         
         if ($stmt->execute())
             return true;
         return false;
 	}
+    public function deleteConviction(){
+        $query = "DELETE FROM CONVICTION WHERE convictionID = :convictionID;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->convictionID = htmlspecialchars(strip_tags($this->convictionID));
+
+        $stmt->bindParam(':convictionID', $this->convictionID);
+
+        if ($stmt->execute())
+            return true;
+        return false;
+    }
     
     // suprimer une table
     public function delTable(){

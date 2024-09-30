@@ -11,14 +11,14 @@
  
      //initialisation de l'objet utilisateur
      $user = new user($db);
- 
+    
      $user->createTableUser();
- 
+
      $user->userName = 'Killian Gurrea';
      $user->userEmail = 'killian.gurrea@etu.univ-amu.fr';
-     $user->userPassword = 'killian-gurrea-69';
+     $user->userPassword = 'Killian-gurrea-69';
      $user->userGender = 'homme';
-     $user->userGrade = 'Grand Maître';
+     $user->userGrade = 'Grand Croix';
      $user->userRank = 'Compagnon';
      
      //     test de la class user   //
@@ -95,7 +95,7 @@
 	
 	//		test de la classe tenracBase		//
 */
-    $TB = new tenracBase();
+    $TB = new tenracBase($db);
 /*
     //création des differentes table
 
@@ -143,12 +143,18 @@ else
     if($TB->createTableOrdre())
         echo "table ordre créer<br>";
     else
-        echo "probleme de création de ordre<br>";*/
+        echo "probleme de création de ordre<br>";
+    $TB->ingredientName = 'pasta';
+    $TB->alimentPoids = null;
+    $TB->alimentQuantity = null;
+    $TB->platID = 1;
+    $TB->platName = 'Carbonara';
+    $TB->addIngredient();
+    $TB->addPlat();*/
 
-
-
-	//		test de la classe MESSAGE		//
-	/*$message = new TableMess($db);
+	//		test de la classe table	MESSAGES	//
+	/*
+	 $message = new TableMess($db);
 
 	if ($message->createTableMessage())
 		 echo '<br>table message créer<br>';
@@ -163,13 +169,25 @@ else
 	else
 		echo 'pas de nouveau message<br>';
 	
-	$messData = $message->readMessage($message->userID);
-	
+	/*$messData = $message->readMessage($message->userID);
 	if ($messData) {
     echo "Nom de l'utilisateur : " . $messData['userName'] . "<br>";
     echo "Message : " . $messData['txtMessage'];
 } else {
     echo "aucun message de cette utilisateur ou id inconnu";
-}*/
+}
+
+	$messData = $message->readMessageAll();
+	if($messData){
+		foreach ($messData as $row) {
+			echo "Nom de l'utilisateur : " . $row['userName'] . "<br>";
+			echo "Message : " . $row['txtMessage'] . "<br><br>"; 
+		}
+	} else {
+		echo "aucun message de cette utilisateur ou id inconnu";
+	}
+	/*$TB->tableName = 'PLAT';
+	$TB->delTable();
+*/
 
 ?>
