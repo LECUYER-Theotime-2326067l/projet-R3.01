@@ -71,7 +71,6 @@ header{
     -moz-box-shadow: 1px 1px 4px #000000;
 }
 
-
 .btn {
     text-decoration: none;
     padding: 10px;
@@ -88,7 +87,6 @@ header{
     -moz-box-shadow: 3px 3px 12px #444444;
 
 }
-
 
 .btn:hover {
     padding: 10px;
