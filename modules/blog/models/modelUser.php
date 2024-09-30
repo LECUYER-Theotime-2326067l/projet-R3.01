@@ -86,6 +86,16 @@ class modelUser{
             return null;
         }
 
+        public function getUserName(){
+            $query = "SELECT userName FROM USER WHERE userEmail = :userEmail;";
+
+            $stmt = $this->conn->prepare(query);
+
+            if ($stmt->execute())
+                return $stmt;
+            return null;
+        }
+
         public function updateUser(){
 			if($this->emailExist()){
 				echo "cette email existe deja";
