@@ -1,7 +1,7 @@
 <?php
 
 $css_file = "repas.css";
-include __DIR__ . '/header.php';
+include constants::directoryViews() . '/header.php';
 headerPage("repas", $css_file);
 ?>
 <meta name="description" content="Cette page liste les repas de l'ordre des tenrac">

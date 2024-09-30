@@ -1,7 +1,7 @@
 <?php
 
 $css_file = "error.css";
-include __DIR__ . '/header.php';
+include constants::directoryViews() . '/header.php';
 headerPage("Erreur", $css_file);
 ?>
 <main>

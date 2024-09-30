@@ -1,6 +1,6 @@
 <?php
 $css_file = "connexion.css";
-include __DIR__ . '/header.php';
+include constants::directoryViews() . '/header.php';
 headerPage("Connexion", $css_file);
 ?>
 <meta name="description" content="Cette page est la page pour se connecter a notre site">

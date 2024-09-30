@@ -1,7 +1,7 @@
 <?php
 
 $css_file = "homepage.css";
-include __DIR__ . '/header.php';
+include constants::directoryViews() . '/header.php';
 headerPage("Accueil", $css_file);
 ?>
 <meta name="description" content="Cette page décrit ce que sont les tenrac, c'est notre page principale">
