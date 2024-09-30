@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $requete->fetch(PDO::FETCH_ASSOC);
 
         if ($result && password_verify($password, $result['userPassword'])) {
-            header('Location: homepage.php');
+            header('Location: index.php?action=homepage');
             exit();
         } else {
             $message = "Email ou mot de passe incorrect !";
