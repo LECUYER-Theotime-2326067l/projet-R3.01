@@ -2,6 +2,7 @@
 
 $css_file = "structure.css";
 include constants::directoryViews() . '/header.php';
+
 headerPage("Structure", $css_file);
 ?>
 <main>
@@ -9,3 +10,4 @@ headerPage("Structure", $css_file);
 </main>
 
 <?php include 'footer.php'?>
+

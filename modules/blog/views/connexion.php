@@ -3,8 +3,9 @@ $css_file = "connexion.css";
 include constants::directoryViews() . '/header.php';
 headerPage("Connexion", $css_file);
 
-// Inclure le modèle pour traiter le formulaire
+
 include constants::directoryModels() . '/connexionModels.php';
+
 ?>
 
 <meta name="description" content="Cette page est la page pour se connecter à notre site">
