@@ -2,6 +2,7 @@
 
 $css_file = "post.css";
 include constants::directoryViews() . '/header.php';
+include constants::directoryModels() . '/post.php';
 headerPage("Post", $css_file);
 
 ?>
