@@ -1,40 +1,38 @@
 <?php
 
 $css_file = "post.css";
-//include constants::directoryModels() . '/post.php';
 include constants::directoryViews() . '/header.php';
-include constants::directoryModels() . '/post.php';
-include constants::directoryModels() . '/loadMessages.php';
 headerPage("Post", $css_file);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <title>Chat</title>
         <meta charset="utf-8">
         <meta name="description" content="Cette page liste les repas de l'ordre des tenrac">
         <link rel="stylesheet" type="text/css" href="<?php echo $css_file; ?>">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+        <title>Chat</title>
     </head>
     <body>
-        <main>
-        <form method="POST" action="">
-            <textarea name="message" placeholder="Veuillez rentrer un message..."></textarea>
-            <br>
-            <input type="submit" name="valider">
-        </form>
-        <section id="message"></section>
-
+        <main style="margin-top: 100px; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100%; max-width: 800px;">
+                <form method="POST" action="">
+                    <textarea name="message" placeholder="Veuillez entrer un message..." style="width: 100%;"></textarea>
+                    <br>
+                    <input type="submit" name="valider" style="width: 100px; padding: 10px;">
+                </form>
+            </div>
+        </main>
+         <?php include constants::directoryModels() . '/loadMessages.php'; ?>
         <script>
-            // sert a refresh la page toute les 500ms
-            setInterval('load_messages()', 500);
-            function load_messages(){
+            // Rafraîchit les messages toutes les 500ms
+            setInterval(load_messages, 500);
+            function load_messages() {
                 $('#message').load('loadMessages.php');
             }
         </script>
-        </main>
     </body>
 </html>
-<?php include 'footer.php'?>
+<?php include 'footer.php'; ?>
+
