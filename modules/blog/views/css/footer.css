@@ -12,8 +12,7 @@ footer{
     flex-shrink: 0;
 }
 .footerhaut{
-    display: flex;
-    justify-content: space-between;
+    margin-top: 10px;
 
 }
 .footerbas{

@@ -8,6 +8,13 @@ body{
     font-family: "Bodoni MT";
 
 }
+main {
+    flex-grow: 1;  /* Permet de remplir l'espace restant */
+    display: flex;
+    align-items: center;  /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+}
 
 .tenIMG{
     float: left;
