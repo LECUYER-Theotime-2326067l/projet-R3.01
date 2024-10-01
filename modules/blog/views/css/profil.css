@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    align-content: center;
+    background-image: url("tendGodIMG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "Bodoni MT";
+    min-height: 100vh;
+    flex-grow: 1;
+
+}
+
+main {
+    flex-grow: 1;  /* Permet de remplir l'espace restant */
+    display: flex;
+    align-items: center;  /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+}
+.prof{
+    position: sticky;
+    text-align: center;
+    font-family: Arial;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    align-items: center;
+    box-shadow: 1px 1px 20px burlywood;
+    border-radius: 50px;
+    padding: 20px;
+
+}

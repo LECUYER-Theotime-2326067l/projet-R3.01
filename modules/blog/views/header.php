@@ -31,7 +31,7 @@ function headerPage($page_title = "Titre par Défaut", $css_file = "Titre par d�
         <div class="dropdown">
             <button class="dropbtn"><?php echo htmlspecialchars($userName); ?></button>
             <div class="dropdown-content">
-                <a href="index.php?action=profil">Profil</a>
+                <a href="index.php?action=profil&id=4">Profil</a>
                 <a href="index.php?action=logout">Déconnexion</a>
             </div>
         </div>
