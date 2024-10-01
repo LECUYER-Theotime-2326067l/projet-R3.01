@@ -17,18 +17,6 @@ main {
     justify-content: center; /* Centrage horizontal */
     min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
 }
-header{
-    top: 0;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    width: 100%;
-    position: sticky;
-    max-height: 10%;
-}
-.logo{
-    width: 50px;
-}
 
 
 

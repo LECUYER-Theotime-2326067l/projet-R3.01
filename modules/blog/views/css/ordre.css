@@ -7,6 +7,7 @@ body{
 header{
     top: 0;
     display: flex;
+<<<<<<< Updated upstream:modules/blog/views/css/ordre.css
     border: solid;
     box-shadow: 1px 1px 20px black;
     color: white;
@@ -54,4 +55,9 @@ header{
     box-shadow: 1px 1px 4px #000000;
     -webkit-box-shadow: 1px 1px 4px #000000;
     -moz-box-shadow: 1px 1px 4px #000000;
+=======
+    align-items: center;  /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+>>>>>>> Stashed changes:modules/blog/views/css/structure.css
 }

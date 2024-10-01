@@ -33,18 +33,6 @@ main {
 .mdp{
     margin: 20px 10px;
 }
-header{
-    top: 0;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    width: 100%;
-    position: sticky;
-    max-height: 10%;
-}
-.logo{
-    width: 50px;
-}
 
 .but{
     text-decoration: none;
@@ -70,6 +58,7 @@ header{
     -webkit-box-shadow: 1px 1px 4px #000000;
     -moz-box-shadow: 1px 1px 4px #000000;
 }
+<<<<<<< Updated upstream
 
 
 .btn {
@@ -98,3 +87,5 @@ header{
     -webkit-box-shadow: 1px 1px 4px #000000;
     -moz-box-shadow: 1px 1px 4px #000000;
 }
+=======
+>>>>>>> Stashed changes

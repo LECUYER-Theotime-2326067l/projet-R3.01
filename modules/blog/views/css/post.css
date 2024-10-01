@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+    align-content: center;
+    background-image: url("tendGodIMG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "Bodoni MT";
+    min-height: 100vh;
+    flex-grow: 1;
+
+}
+
+main {
+    flex-grow: 1;  /* Permet de remplir l'espace restant */
+    align-items: center;  /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+}
+
+
+
+.box{
+    background-color: darksalmon;
+    border: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
