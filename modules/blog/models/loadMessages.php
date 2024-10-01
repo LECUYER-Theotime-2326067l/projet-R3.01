@@ -1,6 +1,5 @@
 <?php
 INCLUDE_ONCE constants::directoryCore().'tableMess.php';
-include constants::directoryViews() . '/post.php';
 $serveur = "mysql-lecuyer-theotime-2326067l.alwaysdata.net";
 $db = "lecuyer-theotime-2326067l_tenrac";
 $user = "343207";

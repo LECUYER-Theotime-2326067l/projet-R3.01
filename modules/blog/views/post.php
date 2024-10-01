@@ -1,8 +1,8 @@
 <?php
 
 $css_file = "post.css";
-include_once constants::directoryViews() . '/header.php';
-include_once constants::directoryModels() . '/post.php';
+include constants::directoryViews() . '/header.php';
+include constants::directoryModels() . '/post.php';
 headerPage("Post", $css_file);
 
 ?>
@@ -35,6 +35,6 @@ headerPage("Post", $css_file);
         </script>
     </body>
 </html>
-<?php include_once constants::directoryModels() . '/loadMessages.php'; ?>
+<?php include constants::directoryModels() . '/loadMessages.php'; ?>
 <?php include 'footer.php'; ?>
 
