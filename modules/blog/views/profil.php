@@ -10,8 +10,8 @@ headerPage("Profil", $css_file);
         Votre profil :
     </h1>
     <h2>
-        <?php echo $_SESSION['user']['username']; ?> <br>
-        <?php echo $_SESSION['user']['userID']; ?>
+        <?php echo htmlspecialchars($_SESSION['user']['userName']); ?> <br>
+        <?php echo htmlspecialchars($_SESSION['user']['userID']); ?>
     </h2>
     </div>
 </main>
