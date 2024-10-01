@@ -19,11 +19,7 @@ if(isset($_POST['valider'])){
         // On lie le message à l'utilisateur connecté
         $tm->txtMessage = $message;
         $tm->userID = $userID; 
-        if($tm->addNewPostMessage()) {
-            echo "Message envoyé avec succès !";
-        } else {
-            echo "Erreur lors de l'envoi du message.";
-        }
+        $tm->addNewPostMessage();
     } else{
         echo "Veuillez entrer un message.";
     }
