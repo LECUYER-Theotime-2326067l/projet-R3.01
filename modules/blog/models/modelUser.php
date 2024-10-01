@@ -89,7 +89,7 @@ class modelUser{
         public function getUserName(){
             $query = "SELECT userName FROM USER WHERE userEmail = :userEmail;";
 
-            $stmt = $this->conn->prepare(query);
+            $stmt = $this->conn->prepare($query);
 
             if ($stmt->execute())
                 return $stmt;
