@@ -25,7 +25,7 @@ headerPage("Post", $css_file);
                 </form>
             </div>
         </main>
-         <?php include constants::directoryModels() . '/loadMessages.php'; ?>
+         
         <script>
             // Rafraîchit les messages toutes les 500ms
             setInterval(load_messages, 500);
@@ -35,5 +35,6 @@ headerPage("Post", $css_file);
         </script>
     </body>
 </html>
+<?php include constants::directoryModels() . '/loadMessages.php'; ?>
 <?php include 'footer.php'; ?>
 
