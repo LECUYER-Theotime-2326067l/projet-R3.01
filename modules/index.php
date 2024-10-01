@@ -51,6 +51,13 @@ try {
             throw new Exception('Aucun identifiant de billet envoyé');
         }
     }
+    elseif ($action === 'profil'){
+        if (filter_input(INPUT_GET,'id')&& $_GET['id']>0){
+            (new profilController())->execute($_GET['id']);
+        }else{
+            throw new Exception('Aucun identifiant de billet envoyé');
+        }
+    }
     elseif ($action === 'logout'){
         (new logoutController())->execute();
     }
