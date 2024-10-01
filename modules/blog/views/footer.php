@@ -3,7 +3,7 @@
     <div class="footerbas">
         <a href="index.php?action=nousContacter&id=5" class="footerhaut">Nous contacter <br></a>
         <p>
-        L'équipe Tenrac : Alex GONCALVES Maxime ALLASIO Kyllian GURREA Mathis GUILLERM Theotime LECUYER
+        L'équipe Tenrac : Alex GONCALVES Maxime ALLASIO Killian GURREA Mathis GUILLERM Theotime LECUYER
         </p>
     </div>
 
