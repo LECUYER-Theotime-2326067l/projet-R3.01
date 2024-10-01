@@ -2,6 +2,7 @@
 
 class structureController {
     public function execute() {
+
         $fichierPhp =  constants::directoryViews().'structure.php';
 
         if (file_exists($fichierPhp)) {

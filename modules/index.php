@@ -27,12 +27,14 @@ try {
         } else {
             throw new Exception('Aucun identifiant de billet envoyé');
         }
+
     }
     elseif ($action === 'repas') {
         if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
             (new repasController())->execute($_GET['id']);
         } else {
             throw new Exception('Aucun identifiant de billet envoyé');
+
         }
     } 
     elseif ($action === 'mdp_oublier'){
