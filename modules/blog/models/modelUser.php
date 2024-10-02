@@ -124,10 +124,12 @@ class modelUser{
             $this->userTitre = htmlspecialchars(strip_tags($this->userTitre));
             $this->userDignite = htmlspecialchars(strip_tags($this->userDignite));
 
+            $userPasswordHash = password_hash($this->userPassword, PASSWORD_DEFAULT);
+
             //lier les parametres
             $stmt->bindParam(':userName', $this->userName);
             $stmt->bindParam(':userEmail', $this->userEmail);
-            $stmt->bindParam(':userPassword', $this->userPassword);
+            $stmt->bindParam(':userPassword', $this->userPasswordHash);
             $stmt->bindParam(':userID', $this->userID);
             $stmt->bindParam(':userGender', $this->userGender);
             $stmt->bindParam(':userGrades', $this->userGrades);
