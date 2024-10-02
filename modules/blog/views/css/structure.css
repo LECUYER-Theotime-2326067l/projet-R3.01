@@ -5,9 +5,10 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    font-family: "Bodoni MT";
+    font-family: "Bodoni MT", sans-serif;
     min-height: 100vh;
     flex-grow: 1;
+    background-attachment: fixed;
 
 }
 
@@ -15,6 +16,29 @@ main {
     flex-grow: 1;  /* Permet de remplir l'espace restant */
     display: flex;
     align-items: center;  /* Centrage vertical */
-    justify-content: center; /* Centrage horizontal */
+    justify-content: space-around; /* Centrage horizontal */
     min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+}
+
+table {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: bisque;
+    border-color: bisque;
+}
+
+th, td {
+    /*padding: 2px;*/
+    border: 1px solid black;
+
+}
+
+th {
+    background-color: #c0504d;
+    color: white;
+    border-radius: 10px;
+}
+
+td {
+    padding: 0;
 }

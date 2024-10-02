@@ -5,9 +5,10 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    font-family: "Bodoni MT";
+    font-family: "Bodoni MT", sans-serif;
     min-height: 100vh;
     flex-grow: 1;
+    background-attachment: fixed;
 
 }
 

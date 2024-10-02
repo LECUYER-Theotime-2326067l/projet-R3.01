@@ -11,17 +11,22 @@ INCLUDE_ONCE constants::directoryCore().'tableMess.php';
 $connection = new PDO("mysql:host=".$serveur.";dbname=".$db."", $user, $pass);
 $tm = new tableMess($connection);
 
-if(isset($_POST['valider'])){
-    if(!empty($_POST['message'])){
-        $userID = $_SESSION['user']['id'];
-        $message = nl2br(htmlspecialchars($_POST['message']));
-
-        // On lie le message à l'utilisateur connecté
-        $tm->txtMessage = $message;
-        $tm->userID = $userID; 
-        $tm->addNewPostMessage();
-    } else{
-        echo "Veuillez entrer un message.";
+if (isset($_SESSION['user']) && isset($_SESSION['user']['id'])) {
+    if(isset($_POST['valider'])){
+        if(!empty($_POST['message'])){
+            $userID = $_SESSION['user']['id'];
+            $message = nl2br(htmlspecialchars($_POST['message']));
+    
+            // On lie le message à l'utilisateur connecté
+            $tm->txtMessage = $message;
+            $tm->userID = $userID; 
+            $tm->addNewPostMessage();
+            echo "";
+        } else {
+            echo ".";
+        }
     }
+} else {
+    echo "";
 }
 ?>
