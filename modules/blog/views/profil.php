@@ -6,7 +6,7 @@ $isLoggedIn = isset($_SESSION['user']);
 $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 $userID = $isLoggedIn ? $_SESSION['user']['id'] : null;
 $userEmail = $isLoggedIn ? $_SESSION['user']['email'] : null;
-$userGrades = $isLoggedIn ? $_SESSION['user']['userGrades'] : null;
+$userRank = $isLoggedIn ? $_SESSION['user']['rank'] : null;
 ?>
 <meta name="description" content="Cette page est le profil utilisateur">
 <main>
@@ -18,7 +18,7 @@ $userGrades = $isLoggedIn ? $_SESSION['user']['userGrades'] : null;
         Nom : <?php echo htmlspecialchars($userName); ?> <br>
         Email : <?php echo htmlspecialchars($userEmail); ?> <br>
         ID : <?php echo htmlspecialchars($userID); ?> <br>
-        Grade : <?php echo htmlspecialchars($userGrades); ?>
+        Rang : <?php echo htmlspecialchars($userRank); ?>
     </h2>
     </div>
 </main>
