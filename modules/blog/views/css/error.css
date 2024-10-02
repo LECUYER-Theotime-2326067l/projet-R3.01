@@ -1,20 +1,19 @@
-body{
-    text-align: center;
-    align-content: center;
-    background-image: url("GODCryingV1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    font-family: "Bodoni MT", sans-serif;
-    flex-grow: 1;
-    background-attachment: fixed;
-
+body {
+  text-align: center;
+  align-content: center;
+  background-image: url("GODCryingV1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: "Bodoni MT", sans-serif;
+  flex-grow: 1;
+  background-attachment: fixed;
 }
 
 main {
-    flex-grow: 1;  /* Permet de remplir l'espace restant */
-    display: flex;
-    align-items: center;  /* Centrage vertical */
-    justify-content: center; /* Centrage horizontal */
-    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
