@@ -24,21 +24,4 @@ if(isset($_POST['valider'])){
         echo "Veuillez entrer un message.";
     }
 }
-
-// $requete = $connection->prepare("SELECT FROM USER WHERE userEmail = :email");
-//             $requete->bindParam(':email', $email);
-//             $requete->execute();
-//             $result = $requete->fetch(PDO::FETCH_ASSOC);
-//             if ($result) {
-//                 // Vérification du mot de passe
-//                 if (password_verify($password, $result['userPassword'])) { 
-//                     $_SESSION['user'] = [
-//                         'id' => $result['userID'],
-//                         'email' => $result['userEmail'],
-//                         'name' => $result['userName'] // Récupérer le nom de l'utilisateur
-//                     ];
-//                     header('Location: index.php?action=repas&id=1');
-//                     exit();
-//                 }
-//             }
 ?>

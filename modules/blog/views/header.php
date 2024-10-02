@@ -26,7 +26,7 @@ function headerPage($page_title = "Titre par D√©faut", $css_file = "Titre par d√
 
     <a href="index.php?action=repas&id=1" class="btn">Repas</a>
     <a href="index.php?action=structure&id=2" class="btn">Structure</a>
-    <a href="index.php?action=post&id=3" class="btn">Post</a>
+    <a href="index.php?action=post&id=3" class="btn">Plat</a>
     <?php if ($isLoggedIn): ?>
         <div class="dropdown">
             <button class="dropbtn"><?php echo htmlspecialchars($userName); ?></button>
@@ -38,7 +38,6 @@ function headerPage($page_title = "Titre par D√©faut", $css_file = "Titre par d√
     <?php else: ?>
         <a href="index.php?action=connexion&id=4" class="btn">Connexion</a>
     <?php endif; ?>
-
 </header>
 </body>
 </html>

@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    align-content: center;
+    align-content: left;
     background-image: url("tendGodIMG.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -8,14 +8,6 @@ body{
     font-family: "Bodoni MT";
     min-height: 100vh;
     flex-grow: 1;
-
-}
-
-main {
-    flex-grow: 1;  /* Permet de remplir l'espace restant */
-    align-items: center;  /* Centrage vertical */
-    justify-content: center; /* Centrage horizontal */
-    min-height: 100vh; /* Ajustez les hauteurs du header et footer ici */
 }
 
 .box{
@@ -26,4 +18,32 @@ main {
     margin-left: 2%;
     margin-right: 2%;
 
+}
+
+#drop_zone{
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    font-size: 16px;
+    color: #666;
+}
+
+.message{
+    justify-content:left;
+    align-items: flex-start;
+}
+
+#drop_zone.hover{
+    border-color: black;
+    background-color: #f1f1f1;
+}
+
+#preview {
+    max-width: 200px;
+    display: none;
 }

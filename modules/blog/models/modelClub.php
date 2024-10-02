@@ -67,6 +67,18 @@ class modelClub{
         return false;
     }
 
+    public function readAllClub(){
+        $query = "SELECT CLUB.clubName, USER.userName FROM CLUB JOIN USER ON CLUB.userID = USER.userID";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if($row)
+            return $row;
+        return null;
+    }
+
     public function deleteClub(){
         $query = "DELETE FROM CLUB WHERE clubID = :clubID;";
 
