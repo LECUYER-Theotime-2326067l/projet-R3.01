@@ -6,6 +6,7 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     font-family: "Bodoni MT", sans-serif;
+    background-attachment: fixed;
 
 }
 main {

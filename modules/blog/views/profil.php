@@ -16,7 +16,7 @@ $userEmail = $isLoggedIn ? $_SESSION['user']['email'] : null;
     <h2>
         Nom : <?php echo htmlspecialchars($userName); ?> <br>
         Email : <?php echo htmlspecialchars($userEmail); ?> <br>
-        ID : <?php echo htmlspecialchars($userID); ?>
+        ID : <?php echo htmlspecialchars($userID); ?> <br>
     </h2>
     </div>
 </main>
