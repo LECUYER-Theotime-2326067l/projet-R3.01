@@ -8,6 +8,7 @@ body{
     font-family: "Bodoni MT", sans-serif;
     min-height: 100vh;
     flex-grow: 1;
+    background-attachment: fixed;
 }
 
 .tenIMG{
