@@ -37,4 +37,3 @@ headerPage("Post", $css_file);
 </html>
 <?php include constants::directoryModels() . '/loadMessages.php'; ?>
 <?php include 'footer.php'; ?>
-
