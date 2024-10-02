@@ -17,12 +17,20 @@ headerPage("Post", $css_file);
     </head>
     <body>
         <main style="margin-top: 100px; display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 100%; max-width: 800px;">
+        <div style="width: 100%; max-width: 800px;">
+            <?php
+                if (isset($_SESSION['user'])) {
+                    ?>
                 <form method="POST" action="">
-                    <textarea name="message" placeholder="Veuillez entrer un message..." style="width: 100%;"></textarea>
+                    <textarea name="message" placeholder="Veuillez entrer un message..." style="width: 40%; height: 100px;"></textarea>
                     <br>
                     <input type="submit" name="valider" style="width: 100px; padding: 10px;">
                 </form>
+                <?php
+                } else {
+                    echo "<p>Veuillez vous connecter pour envoyer un message.</p>";
+                }
+            ?>
             </div>
         </main>
          
