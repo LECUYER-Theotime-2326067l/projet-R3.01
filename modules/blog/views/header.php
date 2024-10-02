@@ -44,3 +44,4 @@ function headerPage($page_title = "Titre par DÃ©faut", $css_file = "Titre par dÃ
 </html>
 <?php
 }
+?>
