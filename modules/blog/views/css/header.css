@@ -25,7 +25,7 @@
     background-color: rgba(170,31,89,255); /* Couleur de fond du menu */
     min-width: 160px; /* Largeur minimale */
     max-width: 200px; /* Largeur maximale pour éviter les dépassements */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Ombre */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre */
     z-index: 1; /* S'assurer que le menu est par-dessus les autres éléments */
     border-radius: 8px; /* Coins arrondis */
     overflow: hidden; /* Cache les éléments en débordement */
@@ -58,7 +58,7 @@
 .btn {
     text-decoration: none;
     padding: 10px;
-    font-family: arial;
+    font-family: arial, sans-serif;
     font-size: 1em;
     color: #FFFFFF;
     background-color: #c0504d;
